@@ -1,18 +1,10 @@
-# ----------------------
-# Flask
-# ----------------------
+# Server & APIs
 flask
+flask-restful
 
-
-# ----------------------
-# Testing
-# ----------------------
-mock
-
-
-# ----------------------
-# Production Server
-# ----------------------
-gevent
-gunicorn
+# Database
 mongoengine
+
+# For deployment
+gunicorn
+eventlet
