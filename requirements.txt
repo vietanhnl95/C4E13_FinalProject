@@ -8,3 +8,6 @@ mongoengine
 # For deployment
 gunicorn
 eventlet
+
+# Others
+geopy
