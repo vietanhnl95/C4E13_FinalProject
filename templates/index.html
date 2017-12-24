@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Homepage</title>
+    <script type="text/javascript" src="../static/js/jquery-3.2.1.min.js">
+    </script>
+    <script type="text/javascript" src="../static/js/popper.js">
+    </script>
+    <script type="text/javascript" src="../static/js/bootstrap.min.js">
+    </script>
+    <link rel="stylesheet" href="../static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../static/css/homepage.css">
+  </head>
+  <body>
+    <div class="container">
+      <form class="form-group" method="post">
+        <input type="text" name="location1" value="" placeholder="address 1">
+        <input type="text" name="location2" value="" placeholder="address 2">
+        <input type="text" name="location3" value="" placeholder="address 3">
+        <button type="submit" name="button">Submit</button>
+      </form>
+      {% for latlng in latlngs %}
+        <p>{{latlng}}</p>
+      {% endfor %}
+    </div>
+  </body>
+</html>
