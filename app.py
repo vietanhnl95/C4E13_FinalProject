@@ -14,7 +14,7 @@ class User(Document):
 @app.route('/', methods = ['GET', 'POST'])
 def index():
     if request.method == 'GET':
-        return render_template('homepage.html')
+        return render_template('index_test.html')
     elif request.method == 'POST':
         form = request.form
         location1 = form['location1']
@@ -26,7 +26,7 @@ def index():
         lat_sum = 0
         lng_sum = 0
         for location in locations:
-            g = geocoders.GoogleV3(api_key='AIzaSyCZ6Xf879FlLldO8hGRc16EggEHaVXcxRQ')
+            g = geocoders.GoogleV3(api_key='AIzaSyDVu3d_FHZGs_4iUOMyrKGROPX5OhQD_Tw')
             location = g.geocode(location, timeout=10)
             lat_sum += location.latitude
             lng_sum += location.longitude
@@ -41,6 +41,14 @@ def index():
 @app.route('/result')
 def result():
     return render_template('result.html', lat = str(optimal_lat), lng = str(optimal_lng))
+
+@app.route('/geocoding-test')
+def geocoding():
+    return render_template('geocoding_test2.html')
+
+@app.route('/search-test')
+def search():
+    return render_template('search_test.html')
 
 @app.route('/sign-up', methods = ['GET', 'POST'])
 def sign_up():
