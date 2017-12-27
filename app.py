@@ -11,32 +11,32 @@ class User(Document):
     username = StringField(required = True, unique = True)
     password = StringField(required=True)
 
-@app.route('/', methods = ['GET', 'POST'])
+@app.route('/')
 def index():
     if request.method == 'GET':
         return render_template('index_test.html')
-    elif request.method == 'POST':
-        form = request.form
-        location1 = form['location1']
-        location2 = form['location2']
-        location3 = form['location3']
-        locations = [location1,location2,location3]
-        latlngs = []
-        latlng = {}
-        lat_sum = 0
-        lng_sum = 0
-        for location in locations:
-            g = geocoders.GoogleV3(api_key='AIzaSyDVu3d_FHZGs_4iUOMyrKGROPX5OhQD_Tw')
-            location = g.geocode(location, timeout=10)
-            lat_sum += location.latitude
-            lng_sum += location.longitude
-            latlng['lat'] = location.latitude
-            latlng['lng'] = location.longitude
-            latlngs.append(latlng.copy())
-        optimal_lat = lat_sum/len(locations)
-        optimal_lng = lng_sum/len(locations)
-        print(optimal_lat,optimal_lng)
-        return render_template('result_demo.html', lat = optimal_lat, lng = optimal_lng, latlngs = latlngs)
+    # elif request.method == 'POST':
+    #     form = request.form
+    #     location1 = form['location1']
+    #     location2 = form['location2']
+    #     location3 = form['location3']
+    #     locations = [location1,location2,location3]
+    #     latlngs = []
+    #     latlng = {}
+    #     lat_sum = 0
+    #     lng_sum = 0
+    #     for location in locations:
+    #         g = geocoders.GoogleV3(api_key='AIzaSyDVu3d_FHZGs_4iUOMyrKGROPX5OhQD_Tw')
+    #         location = g.geocode(location, timeout=10)
+    #         lat_sum += location.latitude
+    #         lng_sum += location.longitude
+    #         latlng['lat'] = location.latitude
+    #         latlng['lng'] = location.longitude
+    #         latlngs.append(latlng.copy())
+    #     optimal_lat = lat_sum/len(locations)
+    #     optimal_lng = lng_sum/len(locations)
+    #     print(optimal_lat,optimal_lng)
+    #     return render_template('result_demo.html', lat = optimal_lat, lng = optimal_lng, latlngs = latlngs)
 
 @app.route('/result')
 def result():

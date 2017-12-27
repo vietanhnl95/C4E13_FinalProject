@@ -19,7 +19,7 @@ body, html{
 
 }
 .body-with-bg{
-  background: url("../img/homepage.jpg");
+  background: url("../images/homepage.jpg");
   height: 100%;
   background-position: center;
   background-repeat: no-repeat;
@@ -30,7 +30,17 @@ body, html{
   padding-right: 100px;
   margin-right: 10px;
 }
-
 .password{
   margin-right: 10px;
+
+}
+.person-bar{
+  width: 75% !important;
+}
+.map{
+  width: 450px;
+  height: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }

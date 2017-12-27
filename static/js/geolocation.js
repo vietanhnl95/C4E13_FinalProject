@@ -41,7 +41,6 @@ $(document).ready(function () {
   });
 
   function getLocation () {
-
   }
 
   $('.submit').click(function () {

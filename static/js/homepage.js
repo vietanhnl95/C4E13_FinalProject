@@ -1,6 +1,5 @@
-// $('#location-input').hide();
-$(document).ready( function addFields() {
-  // $('#number-submit').on('click', function() {
+$(document).ready(function () {
+  $('#number-submit').click(function () {
     var num = $(this).prev().val();
     if (num<=0) {
       alert('Incorrect number');
@@ -12,13 +11,14 @@ $(document).ready( function addFields() {
     };
     for (i=0; i<num; i++) {
       container.appendChild(document.createTextNode('User ' + (i+1)));
+      var new_div = document.createElement('div');
+      new_div.className = 'form-inline my-2 my-lg-0';
+      container.appendChild(new_div);
       var locationInput = document.createElement("input");
       locationInput.type = 'text';
       locationInput.className = 'address form-control mr-sm-2 person-bar';
-      container.appendChild(locationInput);
-      container.appendChild(document.createElement("br"));
+      locationInput.placeholder = 'Enter your address';
+      new_div.appendChild(locationInput);
     }
-  }));
-// };
-//
-// $(document).ready(main)
+  });
+});
