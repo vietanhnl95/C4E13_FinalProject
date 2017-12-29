@@ -25,6 +25,7 @@ $(document).ready(function main() {
     for (i=0; i<num; i++) {
       var new_div = document.createElement('div');
       new_div.className = 'form-inline my-2 my-lg-0';
+      // add div to container
       container.appendChild(new_div);
       var locationInput = document.createElement("input");
       locationInput.id = 'user' + (i+1);
@@ -35,6 +36,7 @@ $(document).ready(function main() {
     };
 
     // create autocomplete function for searchboxes
+
     var inputs = $('.search-box');
     var markers = [];
 
@@ -68,5 +70,6 @@ $(document).ready(function main() {
         markers.push(marker);
       })
     }
+
   });
 })
