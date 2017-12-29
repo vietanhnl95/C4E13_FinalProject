@@ -36,22 +36,37 @@ $(document).ready(function main() {
 
     // create autocomplete function for searchboxes
     var inputs = $('.search-box');
+    var markers = [];
 
-    for (j=0; j<input.length; j++) {
-      autocompleteBox = new google.maps.places.Autocomplete(inputs[j], {
+    for (j=0; j<inputs.length; j++) {
+      var autocompleteBox = new google.maps.places.Autocomplete(inputs[j], {
         //bias the search result to current mapbound
         bounds: map.getBounds()
       });
+
+      autocompleteBox.addListener('place_changed', function() {
+        var place = autocompleteBox.getPlace();
+        if (!place.geometry) {
+          console.log("Return places contain no geometry");
+          return;
+        }
+
+        var icon = {
+          url: place.icon,
+          size: new google.maps.Size(71, 71),
+          origin: new google.maps.Point(0, 0),
+          anchor: new google.maps.Point(17, 34),
+          scaledSize: new google.maps.Size(25, 25)
+        };
+
+        marker = new google.maps.Marker({
+          map: map,
+          icon: icon,
+          title: place.name,
+          position: place.geometry.location
+        });
+        markers.push(marker);
+      })
     }
-    autocompleteBox.addListener('places_changed', function() {
-      var place = autocompleteBox.getPlaces();
-      marker = new google.maps.Marker({
-        map: map,
-        icon: icon,
-        title: place.name,
-        position: place.geometry.location
-      });
-      markers.push(marker);
-    })
   });
 })
