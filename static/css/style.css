@@ -44,3 +44,54 @@ body, html{
   margin-left: auto;
   margin-right: auto;
 }
+.new_div{
+  padding-top: 5px;
+
+}
+.user_box {
+  padding-right: 60px;
+}
+.logo{
+  font-family: 'Bungee', cursive;
+  color: white ;
+  font-size: 2em;
+}
+.address-box{
+  width: 75% !important;
+  margin-top: 5px;
+}
+.result-logo{
+
+  width: 150px;
+  height: auto;
+  text-align: right;
+  margin-left: 390px;
+}
+.infomation{
+  color: white;
+  text-align: right;
+  font-size: 1.5em;
+}
+.result-img{
+  width: 500px;
+  height: 280px;
+  margin-left: 40px;
+}
+.head-btn{
+  margin: 40px auto;
+  display: block;
+}
+.anh1{
+  background: url("../images/bg1.jpg");
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.anh2{
+  background: url("../images/bg2.jpg");
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
