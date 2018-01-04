@@ -6,7 +6,6 @@ function addMarker(location, map) {
   var marker = new google.maps.Marker({
     position: location,
     map: map,
-
   });
 }
 
@@ -82,7 +81,7 @@ function search(centerPoint, searchInput) {
   var service = new google.maps.places.PlacesService(document.getElementById('map'));
   var request = {
     location: centerPoint,
-    radius: '400',
+    radius: '2000',
     query: searchInput
   };
 
@@ -104,6 +103,12 @@ function createResult(centerPoint, result) {
     center: result.geometry.location,
     zoom: 13
   });
+
+  // var resultContainer = document.getElementById('result-info');
+  //
+  // while (resultContainer.hasChild()) {
+  //   resultContainer.removeChild(resultContainer.lastChild);
+  // };
 
   var resultMarker = new google.maps.Marker({
     position: result.geometry.location,
@@ -127,8 +132,29 @@ function createResult(centerPoint, result) {
   var resultAddress = $('<p>').text(result.formatted_address);
   resultAddress.appendTo('#result')[1];
 
-  var resultText = $('<h4>').text('Đi ra thôi còn chờ đợi cái gì nũa');
-  resultText.appendTo('#result')[2];
+  // var resultText = $('<h4>').text('Đi ra thôi còn chờ đợi cái gì nữa');
+  // resultText.appendTo('#result-info')[2];
+
+  var searchAgainText = $('<p>', {
+    class: 'text-white mt-100 text-right'
+  }).text('Chúng tôi đã cố gắng gợi ý địa điểm phù hợp nhất dành cho các bạn. Tuy nhiên, nếu thấy không vừa ý, các bạn có thể tìm lại');
+  searchAgainText.appendTo('#result-info')[3];
+
+
+  var searchAgainButtonDiv = $('<div>', {
+    id: 'search-again-btn',
+    class: 'text-right'
+  }).appendTo('#result-info');
+
+  var searchAgainLink = $('<a>', {
+    id: 'search-again',
+    href: 'https://didaubaygio.herokuapp.com/#search-area-div'
+  }).appendTo('#search-again-btn')[4];
+
+  var searchAgainButton = $('<button>', {
+    class: 'btn btn-danger text-white no-underline'
+  }).text('Tìm lại');
+  searchAgainButton.appendTo('#search-again');
 
   // var resultImage = $('<img>', {
   //   class: 'result-img',
@@ -148,6 +174,10 @@ $(document).ready(function main() {
 
   $("#number-submit").click(function(event){
     var num = $('#number-input').val();
+    if (num > 5) {
+      alert('Trên 5 người thì kết quả sẽ không còn chính xác nữa!');
+    }
+
     createPlaceInputs(num, map);
 
     $('#search-submit').click(function() {
