@@ -183,7 +183,7 @@ $(document).ready(function main() {
       $('#result-area').show();
       search(centerPoint, searchInput);
 
-      $('#search-again-button').click(function(event) {
+      $('#search-again').click(function(event) {
         console.log('clicked');
         location.reload(true);
       })
