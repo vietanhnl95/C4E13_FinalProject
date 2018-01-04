@@ -104,11 +104,7 @@ function createResult(centerPoint, result) {
     zoom: 13
   });
 
-  // var resultContainer = document.getElementById('result-info');
-  //
-  // while (resultContainer.hasChild()) {
-  //   resultContainer.removeChild(resultContainer.lastChild);
-  // };
+  $('#result-info').empty();
 
   var resultMarker = new google.maps.Marker({
     position: result.geometry.location,
@@ -184,7 +180,6 @@ $(document).ready(function main() {
       var searchInput = $('#search-input').val();
       $('#result-area').show();
       search(centerPoint, searchInput);
-
     })
   });
 })
