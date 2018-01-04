@@ -51,7 +51,7 @@ function createPlaceInputs(num, map) {
   for (i = 0; i < num; i++) {
     var new_input = $('<input>', {
       class : 'search-box form-control mr-sm-2 person-bar user_box',
-      placeholder: 'Người thứ' + (i+1),
+      placeholder: 'Địa chỉ người thứ ' + (i+1),
     })
     .appendTo('#location-input')[0];
 
@@ -149,6 +149,7 @@ function createResult(centerPoint, result) {
   }).appendTo('#search-again-btn')[4];
 
   var searchAgainButton = $('<button>', {
+    id: 'search-again-button',
     class: 'btn btn-danger text-white no-underline'
   }).text('Tìm lại');
   searchAgainButton.appendTo('#search-again');
@@ -182,9 +183,9 @@ $(document).ready(function main() {
       $('#result-area').show();
       search(centerPoint, searchInput);
 
-      // $('#search-again').click(function() {
-      //   window.location.reload(true);
-      // })
+      $('#search-again-button').click(function(event) {
+        location.reload(true);
+      })
     })
   });
 })
