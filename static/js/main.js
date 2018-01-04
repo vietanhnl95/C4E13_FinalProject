@@ -133,7 +133,7 @@ function createResult(centerPoint, result) {
 
   var searchAgainText = $('<p>', {
     class: 'text-white mt-100 text-right'
-  }).text('Chúng tôi đã cố gắng gợi ý địa điểm phù hợp nhất dành cho các bạn. Tuy nhiên, nếu thấy không vừa ý, các bạn có thể tìm lại');
+  }).text('Chúng tôi đã cố gắng gợi ý địa điểm phù hợp nhất dành cho các bạn. Tuy nhiên, nếu thấy không vừa ý, các bạn có thể thử tìm kiếm một địa điểm khác');
   searchAgainText.appendTo('#result-info')[3];
 
 
@@ -144,7 +144,7 @@ function createResult(centerPoint, result) {
 
   var searchAgainLink = $('<a>', {
     id: 'search-again',
-    href: 'https://didaubaygio.herokuapp.com/#search-area-div'
+    href: 'https://didaubaygio.herokuapp.com/#search-area-div',
   }).appendTo('#search-again-btn')[4];
 
   var searchAgainButton = $('<button>', {
@@ -180,6 +180,10 @@ $(document).ready(function main() {
       var searchInput = $('#search-input').val();
       $('#result-area').show();
       search(centerPoint, searchInput);
+
+      $('#search-again').click(function() {
+        location.reload();
+      });
     })
   });
 })
