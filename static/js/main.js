@@ -94,10 +94,6 @@ function search(centerPoint, searchInput) {
       result = results[Math.floor(Math.random() * results.length)];
       console.log(result)
       createResult(centerPoint, result);
-
-      $('#search-again-button').click(function(event) {
-        console.log('clicked');
-        location.reload(true);
     }
   }
 }
@@ -158,10 +154,10 @@ function createResult(centerPoint, result) {
   }).text('Tìm lại');
   searchAgainButton.appendTo('#search-again');
 
-  // var resultImage = $('<img>', {
-  //   class: 'result-img',
-  //   src: result.photos[0]
-  // }).appendTo('result-info')[2];
+  $('#search-again-button').click(function(event) {
+    console.log('clicked');
+    location.reload(true);
+  })
 }
 
 
@@ -186,7 +182,6 @@ $(document).ready(function main() {
       var searchInput = $('#search-input').val();
       $('#result-area').show();
       search(centerPoint, searchInput);
-      })
     })
   });
 })
