@@ -79,7 +79,7 @@ function centerPointCalculation(positionList) {
 }
 
 function search(centerPoint, searchInput) {
-  var service = new google.maps.places.PlacesService(document.getElementById('map'));
+  var service = new google.maps.places.PlacesService(map);
   var request = {
     location: centerPoint,
     radius: '2000',
@@ -145,7 +145,7 @@ function createResult(centerPoint, result) {
 
   var searchAgainLink = $('<a>', {
     id: 'search-again',
-    href: 'https://didaubaygio.herokuapp.com/?dummy=$random#search-area-div',
+    href: 'https://didaubaygio.herokuapp.com/#search-area-div',
   }).appendTo('#search-again-btn')[4];
 
   var searchAgainButton = $('<button>', {
@@ -163,7 +163,7 @@ function createResult(centerPoint, result) {
 
 $(document).ready(function main() {
   // create map
-  var map = new google.maps.Map(document.getElementById('map'), {
+  map = new google.maps.Map(document.getElementById('map'), {
     center: {lat: 21.028511, lng: 105.804817},
     zoom: 12
   });
