@@ -182,7 +182,7 @@ $(document).ready(function main() {
       search(centerPoint, searchInput);
 
       $('#search-again').click(function() {
-        location.reload();
+        location.reload(true);
       });
     })
   });
