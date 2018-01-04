@@ -184,6 +184,7 @@ $(document).ready(function main() {
       search(centerPoint, searchInput);
 
       $('#search-again-button').click(function(event) {
+        console.log('clicked');
         location.reload(true);
       })
     })
