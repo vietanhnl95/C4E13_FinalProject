@@ -10,7 +10,7 @@ function addMarker(location, map) {
 }
 
 function setupInputAsAutoPlace(input, map) {
-  var autocompleteBox = new google.maps.places.Autocomplete(input, {
+  var autocompleteBox = new google.maps.places.autocomplete(input, {
           bounds: map.getBounds(),
           types: ['geocode']
   });
@@ -180,6 +180,9 @@ $(document).ready(function main() {
 
     $('#search-submit').click(function() {
       var searchInput = $('#search-input').val();
+      if (searchInput === 'Cà phê') {
+        searchInput = 'Cafe';
+      }
       $('#result-area').show();
       search(centerPoint, searchInput);
     })
