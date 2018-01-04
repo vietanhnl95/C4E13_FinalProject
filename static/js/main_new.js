@@ -51,7 +51,9 @@ function createPlaceInputs(num, map) {
 
   for (i = 0; i < num; i++) {
     var new_input = $('<input>', {
-      class : 'search-box form-control mr-sm-2 person-bar user_box'
+      class : 'form-control address-box',
+      placeholder : "Địa chỉ người " + (i+1)
+
     })
     .appendTo('#location-input')[0];
 
@@ -82,7 +84,7 @@ function search(centerPoint, searchInput) {
   var service = new google.maps.places.PlacesService(document.getElementById('map'));
   var request = {
     location: centerPoint,
-    radius: 400,
+    radius: 500,
     query: searchInput
   };
 
@@ -101,12 +103,12 @@ function search(centerPoint, searchInput) {
 
 function createResult(centerPoint, result) {
   var resultMap = new google.maps.Map(document.getElementById('map2'), {
-    center: result.geometry.location,
-    zoom: 13
+    center: centerPoint,
+    zoom: 12
   });
 
   var resultMarker = new google.maps.Marker({
-    position: result.geometry.location,
+    position: centerPoint,
     map: resultMap
   });
 

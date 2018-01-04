@@ -77,16 +77,18 @@ body, html{
   height: 280px;
   margin-left: 40px;
 }
-.head-btn{
-  margin: 40px auto;
-  display: block;
+
+#carousel-btn {
+  margin-bottom: 10px;
 }
+
 .anh1{
-  background: url("../images/bg1.jpg");
+  /* background: url("../images/bg1.jpg");
   height: 100%;
   background-position: center;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: cover; */
+  background-color: #343A40;
 }
 .anh2{
   background: url("../images/bg2.jpg");
@@ -94,4 +96,22 @@ body, html{
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+.text{
+  text-decoration: none;
+  color: white !important ;
+}
+.place{
+  margin-bottom: 5px;
+
+}
+.result-box{
+  border: 1px white solid;
+  margin: 70px 0;
+  padding-right: 10px;
+}
+
+.no-underline {
+  text-decoration: none !important;
 }
