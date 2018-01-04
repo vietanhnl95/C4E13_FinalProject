@@ -10,7 +10,7 @@ function addMarker(location, map) {
 }
 
 function setupInputAsAutoPlace(input, map) {
-  var autocompleteBox = new google.maps.places.autocomplete(input, {
+  var autocompleteBox = new google.maps.places.Autocomplete(input, {
           bounds: map.getBounds(),
           types: ['geocode']
   });
