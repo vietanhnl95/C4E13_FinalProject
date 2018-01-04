@@ -50,7 +50,8 @@ function createPlaceInputs(num, map) {
 
   for (i = 0; i < num; i++) {
     var new_input = $('<input>', {
-      class : 'search-box form-control mr-sm-2 person-bar user_box'
+      class : 'search-box form-control mr-sm-2 person-bar user_box',
+      placeholder: 'Người thứ' + (i+1),
     })
     .appendTo('#location-input')[0];
 
@@ -144,7 +145,7 @@ function createResult(centerPoint, result) {
 
   var searchAgainLink = $('<a>', {
     id: 'search-again',
-    href: 'https://didaubaygio.herokuapp.com/#search-area-div',
+    href: 'https://didaubaygio.herokuapp.com/?dummy=$random#search-area-div',
   }).appendTo('#search-again-btn')[4];
 
   var searchAgainButton = $('<button>', {
@@ -181,9 +182,9 @@ $(document).ready(function main() {
       $('#result-area').show();
       search(centerPoint, searchInput);
 
-      $('#search-again').click(function() {
-        location.reload(true);
-      });
+      // $('#search-again').click(function() {
+      //   window.location.reload(true);
+      // })
     })
   });
 })
