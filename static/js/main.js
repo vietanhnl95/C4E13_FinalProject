@@ -82,7 +82,7 @@ function search(centerPoint, searchInput) {
   var service = new google.maps.places.PlacesService(document.getElementById('map'));
   var request = {
     location: centerPoint,
-    radius: 400,
+    radius: '400',
     query: searchInput
   };
 

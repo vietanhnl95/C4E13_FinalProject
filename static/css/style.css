@@ -61,16 +61,16 @@ body, html{
   margin-top: 5px;
 }
 .result-logo{
-
   width: 150px;
   height: auto;
   text-align: right;
   margin-left: 390px;
+  margin-bottom: 50px;
 }
 .infomation{
   color: white;
   text-align: right;
-  font-size: 1.5em;
+  font-size: 1.2em;
 }
 .result-img{
   width: 500px;
@@ -115,4 +115,8 @@ body, html{
 
 .no-underline {
   text-decoration: none !important;
+}
+
+#result h4 {
+  margin-top: 80px;
 }
