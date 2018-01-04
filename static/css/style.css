@@ -133,3 +133,11 @@ body, html{
   display: block;
   align-items: flex-end !important;
 }
+
+#footer {
+  text-align: center;
+  background-color: #C41F2E;
+  color: white;
+  padding: 8px;
+  opacity: 0.8
+}
