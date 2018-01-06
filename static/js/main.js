@@ -107,10 +107,18 @@ function createResult(centerPoint, result) {
 
   $('#result-info').empty();
 
+  var image = 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png';
+
   var resultMarker = new google.maps.Marker({
     position: result.geometry.location,
-    map: resultMap
+    map: resultMap,
+    icon: image
   });
+
+  for (z=0; z<positionList.length; z++) {
+    userPos = positionList[z];
+    addMarker(userPos, resultMap);
+  }
 
   var resultLogo = $('<h1>', {
     class: 'logo result-logo'
@@ -154,6 +162,11 @@ function createResult(centerPoint, result) {
   }).text('Tìm lại');
   searchAgainButton.appendTo('#search-again');
 
+  // var searchAnotherButton = $('<button>', {
+  //   id = 'search-another-button',
+  //   class: 'btn btn-danger text-white no-underline'
+  // }).text('Quán khác');
+
   $('#search-again-button').click(function(event) {
     console.log('clicked');
     location.reload(true);
@@ -180,7 +193,7 @@ $(document).ready(function main() {
 
     $('#search-submit').click(function() {
       var searchInput = $('#search-input').val();
-      if (searchInput === 'Cà phê') {
+      if (searchInput.toLowerCase() === 'cà phê') {
         searchInput = 'Cafe';
       }
       $('#result-area').show();
