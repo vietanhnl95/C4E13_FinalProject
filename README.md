@@ -1,6 +1,6 @@
 # C4E13_FinalProject_TeamDaiSo
 
-This is the final project of Code 4 Everyone Course
+This is the final project of Code 4 Everyone Course. We have developed this website as the capstone project for a 3-month fundamental web development course at https://mindx.edu.vn/
 
 Website is live on: http://didaubaygio.herokuapp.com/
 
